@@ -32,7 +32,7 @@ def countries(state):
     status = {
 
         'state': RESPONSE[len(RESPONSE) - 1]['Country'],
-        'cases': RESPONSE[len(RESPONSE) - 1]['Status']
+        'cases': RESPONSE[len(RESPONSE) - 1]['Cases']
 
     }
     print(status)
