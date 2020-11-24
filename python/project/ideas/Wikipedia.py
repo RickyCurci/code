@@ -7,4 +7,5 @@ def search(iteam):
     result = wikipedia.page(iteam)
     print(result.title)
     print(result.content)
-search('Github')
+
+search('Ingvar Kamprad')
