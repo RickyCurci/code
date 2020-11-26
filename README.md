@@ -1,10 +1,13 @@
 Portfolio  
 =========
 
-Hy im Ricky and i can dev in:
+In this repo you can see my project. Im 15 and my name is Ricky i live in ITALY. 
+  
+LANGUAGES 
 
-Languages Code
----------|------
-Python
+*Python
+*Javascript
+*HTML {css, javascript}
 
 
+clone and saw what i can do :) BYE!! 
