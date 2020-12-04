@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+from random import * 
 
 def es62(matrice):
     '''
@@ -24,3 +27,10 @@ def es62(matrice):
                 | 25  1  -1 |                   | -4  0   2 |
     '''
     # inserisci il tuo codice qui
+    m = matrice
+
+    y1 = m[0]
+    y2 = m[1]
+    y3 = m[2]
+
+    
