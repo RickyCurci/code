@@ -22,10 +22,12 @@ class message:
 
         try:
 
-            query = "INSERT INTO chat (title, data, content) VALUES ( %s, %s, %s)"
+            query = "INSERT INTO chat (title, data, content) VALUES (%s, %s, %s)"
             value = (title, data, content)
 
             cursor.execute(query, value)
+            mydb.commit()
+
             print('[ * ]{ INSERT }')
 
         except:
