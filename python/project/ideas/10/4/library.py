@@ -3,27 +3,68 @@
 import mysql.connector
 import time
 
+class users:
 
-mydb = mysql.connector.connect(
+    def singup(name):
 
-    host = '2.235.240.156',
-    user = 'root',
-    password = 'Riccardo05',
+        try:
 
-)
+            mydb = mysql.connector.connect(
 
-cursor = mydb.cursor()
-cursor.execute("USE message")
+                host = '2.235.240.156',
+                user = 'Riccardo_Curci',
+                password = '402cinque2020settembre12'
+
+            )
+
+            cursor = mydb.cursor()
+            cursor.execute("USE message")
+
+
+            cursor.execute('SELECT * FROM users;')
+            for nickname in cursor:
+
+                if name == nickname:
+                    print('[ / ]{ ERROR [ USER ALREADY EXIST ]}')
+
+                elif name != nickname:
+
+                     query = "INSERT INTO users (nickname) VALUES (%s)"
+                     value = (user)
+
+
+                     cursor.execute(query, value)
+                     mydb.commit()
+
+                     print('[ * ]{ SINGUP [ OK ]}')
+
+
+        except:
+
+            print('[ / ]{ ERROR { CONNECTION | SINGUP }')
+
+
 
 
 class message:
 
-    def new(title, data, content):
+    def new(data, user, content):
 
         try:
 
-            query = "INSERT INTO chat (title, data, content) VALUES (%s, %s, %s)"
-            value = (title, data, content)
+            mydb = mysql.connector.connect(
+
+                host = '2.235.240.156',
+                user = 'Riccardo_Curci',
+                password = '402cinque2020settembre12'
+
+            )
+
+            cursor = mydb.cursor()
+            cursor.execute("USE message")
+
+            query = "INSERT INTO chat (data, content) VALUES (%s, %s, %s)"
+            value = (data, user, content)
 
             cursor.execute(query, value)
             mydb.commit()
@@ -36,8 +77,25 @@ class message:
 
     def show():
 
-        query = "SELECT * FROM chat"
-        cursor.execute(query)
+        try:
 
-        for row in cursor:
-            print(row)
+            mydb = mysql.connector.connect(
+
+                host = '2.235.240.156',
+                user = 'Riccardo_Curci',
+                password = '402cinque2020settembre12'
+
+            )
+
+            cursor = mydb.cursor()
+            cursor.execute("USE message")
+
+
+            query = "SELECT * FROM chat"
+            cursor.execute(query)
+
+            for row in cursor:
+                print(row)
+
+        except:
+            print('[ / ]{ ERROR [ CONNECTION ]}')
