@@ -3,26 +3,24 @@
 import mysql.connector
 import time
 
-class remidenrs:
+class reminders:
 
     def listselect(title):
 
-        try:
+        mydb = mysql.connector.connect(
 
-            mydb = mysql.connector.connect(
+            host = '2.235.240.156',
+            user = 'root',
+            password = 'Riccardo05'
 
-                host = '2.235.240.156',
-                user = 'root',
-                password = 'Riccardo05'
+        )
 
-            )
+        cursor = mydb.cursor()
+        cursor.execute('USE reminders')
+        cursor.execute("SELECT * FROM "+str(title)+";")
 
-            cursor = mydb.cursor()
-            cursor.execute('USE reminders')
-            cursor.execute('SELECT * FROM'+title)
-            print(cursor)
-
-
+        for item in cursor:
+            print(item)
 
     def additem(title, content, data):
 
@@ -39,7 +37,7 @@ class remidenrs:
             cursor = mydb.cursor()
             cursor.execute('USE reminders')
 
-            query = "INSERT INTO"+title+"(status, content, data) VALUES('[  ]',"+content+data+");"
+            query = "INSERT INTO "+title+"(status, content, data) VALUES('[  ]',"+content+","+data+");"
             cursor.execute(query)
             print('[ OK ]{ INSERT }')
 
