@@ -37,10 +37,38 @@ class reminders:
             cursor = mydb.cursor()
             cursor.execute('USE reminders')
 
-            query = "INSERT INTO "+title+"(status, content, data) VALUES('[  ]',"+content+","+data+");"
-            cursor.execute(query)
+            query = "INSERT INTO "+title+"(status, content, data) VALUES('[  ]', %s, %s);"
+            value = (content, data)
+            cursor.execute(query, value)
+            mydb.commit()
+
             print('[ OK ]{ INSERT }')
 
         except:
 
             print('[ // ]{ INSERT [ ERROR ]}')
+
+    def makecomplite(title, item_num):
+
+        try:
+
+            mydb = mysql.connector.connect(
+
+                host = '2.235.240.156',
+                user = 'root',
+                password = 'Riccardo05'
+
+            )
+
+            cursor = mydb.cursor()
+            cursor.execute('USE reminders')
+
+            query = "UPDATE "+title+" SET status = '[//]' WHERE ID = "+str(item_num)
+            cursor.execute(query)
+            mydb.commit()
+
+            print('[ OK ]{ COMPLITE }')
+
+        except:
+
+	        print('[ OK ]{ COMPLITE [ ERROR ]}')
