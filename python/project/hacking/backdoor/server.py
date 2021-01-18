@@ -4,8 +4,8 @@ import os
 import socket
 
 
-host = '2.235.240.156'
-port = 21
+host = '192.168.1.50'
+port = 8888
 
 server = socket.socket()
 server.bind((host,port))

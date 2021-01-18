@@ -1,7 +1,7 @@
 import socket
 import subprocess
 
-host = '2.235.240.156'
+host = '192.168.1.50'
 port = 8888
 
 client = socket.socket()
