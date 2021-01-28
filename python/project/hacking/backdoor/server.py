@@ -1,6 +1,4 @@
 #from colorama import Fore, Style
-
-import os
 import socket
 
 
@@ -19,7 +17,8 @@ print('[{+}] SERVER CONNCET TO '+host)
 while True:
     command = input('$/'+host+'/>')
     command = command.encode()
+    client.send(command)
 
     output = client.recv(1024)
     output = output.decode()
-    print(output)
+    print('OUTPUT: '+output)
