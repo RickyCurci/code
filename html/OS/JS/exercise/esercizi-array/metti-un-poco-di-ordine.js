@@ -16,7 +16,8 @@
   http://www.imparareaprogrammare.it
 */
 
-var Array = [
-  3, 7, -2, 5, 8, 1, 2, 5, 6, -4
-]
-
+var a = Math.floor(Math.random() * 10 + 1)
+for (i in a){
+  a.push(a[-1])
+  a.remove(a[0])
+}

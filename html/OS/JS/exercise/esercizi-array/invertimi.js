@@ -15,3 +15,25 @@
 
   http://www.imparareaprogrammare.it
 */
+function range(start, end) {
+    var ans = [];
+    for (let i = start; i <= end; i++) {
+        ans.push(i);
+    }
+    return ans;
+}
+
+var N = Math.floor(Math.random() * 5 + 1)
+var a = []
+
+for (i in range(1,N)) {
+  a.push(Math.floor(Math.random() * 11))
+}
+
+console.log(N)
+console.log(a)
+
+for (i in a) {
+  a.push(parseInt(a[ a.lenght - 1]))
+  //a.pop(a[a.lenght - 1])
+}

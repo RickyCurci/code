@@ -12,3 +12,39 @@
 
   http://www.imparareaprogrammare.it
 */
+//const prompt = require('prompt-sync')({sigint: true});
+function range(start, end) {
+    var ans = [];
+    for (let i = start; i <= end; i++) {
+        ans.push(i);
+    }
+    return ans;
+}
+
+var a = []
+for (i in range(0, 100)) {
+  a.push(Math.floor(Math.random() * 50 + 1))
+}
+b = []
+function logic() {
+
+  for (i in a) {
+    var num = [0,3,4,5,3,6] //prompt('>')
+    for (N in num) {
+      if ((i % N) == 0) {
+        a[i] = 0
+      }
+    }
+
+    if (i == 0) {
+      b.push(0)
+      if (b.lenght == a.lenght) {
+        break
+        console.log(a)
+      }
+    }
+
+    logic()
+  }
+
+}

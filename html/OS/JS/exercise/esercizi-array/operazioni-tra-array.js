@@ -20,4 +20,10 @@
   http://www.imparareaprogrammare.it
 */
 
-var 
+var a = [3, 7, 2, 5, 8, 1, 2, 5, 6, 4]
+var b = [9, 3, 1, 4, 7, 6, 5, 10, 1, 5]
+
+var c = []
+for (i in range(0, 10)) {
+    c.append(a[i] + a[i])
+}
