@@ -1,19 +1,32 @@
 
 def count(y): 
+    data = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+
     y = list(y)
     for i in range(0,3): 
         y.remove(y[i])
     
     x = y 
-
+  
     denary = 0
-    print(x)
+    
     result  = []
     for digit in x: 
         denary = denary * 2 + int(digit)
         
-    
     print(denary)
+
+    print('-----')
+
+   # if denary <= (len(data) + 1): 
+   #     denary = data[denary - 1]
+   #     print(denary) 
+
+   # else: 
+   #     denary = denary 
+   #     print(denary)
+
 
 circle_4 = [
 
@@ -31,6 +44,5 @@ circle_4 = [
 for i in circle_4: 
 
     y = i
+    print(len(y))
     count(y)
-
-

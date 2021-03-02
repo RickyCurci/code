@@ -15,7 +15,7 @@ class message:
                 password = 'Riccardo05'
 
             )
-
+            
             cursor = mydb.cursor()
             cursor.execute("USE message")
 
