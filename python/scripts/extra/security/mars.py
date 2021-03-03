@@ -1,48 +1,41 @@
 
-def count(y): 
-    data = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+#list('00000101110000100010000000101100001110100000001110000111011000000010100000011111')
+#list('0000010100|0000001000|0000001001|0000001110|0000000111|0000010011|0001111111|1111111111|')
+#list('00000101000000011001000111111111111111110000001101000000100100000001110000001000')
 
 
-    y = list(y)
-    for i in range(0,3): 
-        y.remove(y[i])
-    
-    x = y 
-  
-    denary = 0
-    
-    result  = []
-    for digit in x: 
-        denary = denary * 2 + int(digit)
-        
-    print(denary)
+ring = [
 
-    print('-----')
+    list('00000001000000000001000001001000000001010001111111111111111111111111111111111111'),
+    list('00000011010000001001000000011100000010000000010100000001100100011111111111111111'),
+    list('00011111111111111111000001010000000010000000001001000000111000000001110000010011'),
+    list('00000011100001110110000000101000000111110000010111000010001000000010110000111010')
 
-   # if denary <= (len(data) + 1): 
-   #     denary = data[denary - 1]
-   #     print(denary) 
-
-   # else: 
-   #     denary = denary 
-   #     print(denary)
-
-
-circle_4 = [
-
-        '0000001110',
-        '0001110110',
-        '0000001010',
-        '0000011111',
-        '0000010111',
-        '0000100010',
-        '0000001011',
-        '0000111010'
 
 ]
 
-for i in circle_4: 
+num = []; msg = []
+letter = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+for inp in ring:
+    while len(inp) >= 1:
+        for i in inp[:3]:
+            inp.remove(i)
 
-    y = i
-    print(len(y))
-    count(y)
+        _inp = ''.join(inp[:7])
+        msg.append(int(_inp, 2))
+
+        for x in inp[:7]:
+            inp.remove(x)
+
+for i in msg:
+
+    if i == 10 or i == 11: 
+        msg[msg.index(i)] = str(i)
+    elif i < (len(letter) + 1):
+        msg[msg.index(i)] = letter[i - 1]
+
+    else: 
+        msg[msg.index(i)] = str(i) 
+    
+msg = ''.join(msg); msg = msg.replace('127', ' ')
+print(msg)
