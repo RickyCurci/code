@@ -1,0 +1,12 @@
+#OVERPASS 
+
+	ip = 10.10.31.230
+
+## TASK 
+
+	1. HACK MACHINE 
+	2. FLUSH ROOT PRIVILEGES
+
+###REASEARCH 
+
+	 
